@@ -59,7 +59,7 @@ public class BpDeep{
                     layer_weight[l][j][i]+=layer_weight_delta[l][j][i];//隐含层权重调整
                     if(j==layerErr[l].length-1){
                         layer_weight_delta[l][j+1][i]= mobp*layer_weight_delta[l][j+1][i]+rate*layerErr[l+1][i];//截距动量调整
-                        layer_weight[l][j+1][i]+=layer_weight_delta[l][j+1][i];//截距权重调整
+                        layer_weight[l][j+1][i]+=layer_weight_delta[l][j+1][i];//截距权重调整 改变权重调整方式
                     }
                 }
                 layerErr[l][j]=z*layer[l][j]*(1-layer[l][j]);//记录误差
